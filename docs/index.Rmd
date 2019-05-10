@@ -458,15 +458,13 @@ Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio
 1) 
 
 ```{r}
-passageiros <- df_titanic %>% arrange(desc(classe))
+
 ```
 
 2) 
 
 ```{r}
-mulheres <- df_titanic %>% 
-  filter(sexo == "feminino") %>% 
-  arrange(idade)
+
 ```
 
 ---
@@ -519,15 +517,13 @@ ativo
 1) 
 
 ```{r}
-passageiros <- df_titanic %>% arrange(desc(classe))
+
 ```
 
 2) 
 
 ```{r}
-mulheres <- df_titanic %>% 
-  filter(sexo == "feminino") %>% 
-  arrange(idade)
+
 ```
 
 ---
@@ -644,15 +640,13 @@ class(passou_enem)
 1) 
 
 ```{r}
-passageiros <- df_titanic %>% arrange(desc(classe))
+
 ```
 
 2) 
 
 ```{r}
-mulheres <- df_titanic %>% 
-  filter(sexo == "feminino") %>% 
-  arrange(idade)
+
 ```
 
 ---
@@ -726,7 +720,9 @@ is.list(harry_friends)
 
 A função head() mostra as primeiras 6 linhas do dataframe.
 ```{r}
-df <- starwars
+data(iris)
+
+df <- iris
 
 head(df)
 ```
@@ -735,15 +731,6 @@ head(df)
 
 
 ---
-# Dataframes  - Tidy data
-
-```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/tidy-1.png")
-```
-
-Fonte: [Data Science with R by Garrett Grolemund](http://garrettgman.github.io/tidying/)
----
-
 
 # Funções úteis para trabalhar com dataframes
 
@@ -810,15 +797,13 @@ class(vetor_logical)
 1) 
 
 ```{r}
-passageiros <- df_titanic %>% arrange(desc(classe))
+
 ```
 
 2) 
 
 ```{r}
-mulheres <- df_titanic %>% 
-  filter(sexo == "feminino") %>% 
-  arrange(idade)
+
 ```
 
 ---
@@ -954,15 +939,13 @@ NA == NA
 1) 
 
 ```{r}
-passageiros <- df_titanic %>% arrange(desc(classe))
+
 ```
 
 2) 
 
 ```{r}
-mulheres <- df_titanic %>% 
-  filter(sexo == "feminino") %>% 
-  arrange(idade)
+
 ```
 
 ---
@@ -1024,7 +1007,6 @@ library(tidyverse)
 
 - [Livro R for Data Science](https://r4ds.had.co.nz) <br></br>
 - [Material do Curso-R](https://www.curso-r.com/material/) <br></br>
-- [Site do Tidyverse](- https://www.tidyverse.org) <br></br>
 - [R-Bloggers](https://www.r-bloggers.com) <br></br>
 
 ---
