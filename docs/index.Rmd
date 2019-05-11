@@ -135,14 +135,13 @@ class:   middle
 ---
 
 # O que é um algoritmo?
-
-
+ - Pode ser definido com uma sequência de passos (instruções) para resolver um determinado problema.
+ 
+Exemplo: definindo aprovações de alunos após avaliações de uma disciplina.
 
 ```{r echo=FALSE, fig.align='center', out.width="70%"}
-knitr::include_graphics("img/data-science.jpg")
+knitr::include_graphics("img/algoritmo.jpg")
 ```
-
----
 
 ---
 # O que é o R?
@@ -158,6 +157,17 @@ knitr::include_graphics("img/data-science.jpg")
 ```{r echo=FALSE, out.width="40%"}
 knitr::include_graphics("img/Rlogo.png")
 ```
+---
+# O que é o R?
+
+- Baseada na linguagem S   
+
+- 1ª versão de 1995 por Ross Ihaka e Robert Gentleman da Universidade de Auckland
+
+- Berço na Estatística
+
+- Mantida pela [R Development Core Team](https://cran.r-project.org/) 
+
 ---
 # Por que usar o R?
 
@@ -234,11 +244,6 @@ Fonte: [Ana Lu Spinola](https://analuspi.github.io/Text-Mining/)
 knitr::include_graphics("img/bigram-ana-lu.png") 
 ```
 Fonte: [Ana Lu Spinola](https://analuspi.github.io/Text-Mining/)
-
----
-
-class: center, middle
-# Boas Práticas de Programação
 
 ---
 
