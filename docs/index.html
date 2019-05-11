@@ -165,6 +165,10 @@ class:   middle
 
 - Está disponível em diferentes plataformas: Windows, Linux e Mac
 
+- É reprodutível!
+
+- Compartilhável!
+
 ---
 
 # O que podemos fazer com o R?
@@ -354,25 +358,24 @@ Os atalhos facilitam. Veja os principais:&lt;br&gt;&lt;/br&gt;
 - CTRL + SHIFT + M: (%&gt;%) operador pipe.&lt;br&gt;&lt;/br&gt;
 ---
 
-class: center, middle
-# R Básico
-
----
-
 # E lá vamos nós!
 
 &lt;center&gt;&lt;img src="img/S5e27_T.V._typing.gif"&gt;&lt;/center&gt; 
 
 ---
+class: center, middle
+# R Básico
 
+---
 # Instruções
 
 - Abrir o RStudio da sua máquina &lt;br&gt;&lt;/br&gt;
 
 - Abrir um novo R script (file -&gt; new file -&gt; R script)
 ---
-
 # R como calculadora
+
+- O R permite realizar muitas operações aritméticas em seu console!
 
 
 ```r
@@ -486,28 +489,29 @@ Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio
 ---
 # Desafio 1
 
-1)
-
-2)
+Daenerys quer conquistar uma aldeia com os seus dois dragões. Cada dragão mata 32 ovelhas e 90 pessoas a cada 1 hora. Considerando que ela atacará a aldeia por 4h, quantas ovelhas e pessoas ao todo os dragões irão assassinar após o ataque?
 
 ---
 
-# Desafio 1 - Resposta
+# Desafio - Resposta
 
-1) 
-
-
-
-2) 
+Daenerys quer conquistar uma aldeia com os seus dois dragões. Cada dragão mata 32 ovelhas e 90 pessoas a cada 1 hora. Considerando que ela atacará a aldeia por 4h, quantas ovelhas e pessoas ao todo os dragões irão assassinar após o ataque? 
 
 
+```r
+2*32*4 + 2*90*4
+```
+
+```
+## [1] 976
+```
 
 ---
-# O que é um objeto?
+# O que é uma variável?
 
 ---
 
-# Criando objetos no R
+# Atribuindo valor a uma variável no R
 
 - Para atribuir um valor a um objeto no R, utilizamos o operador **&lt;-**  &lt;br&gt;&lt;/br&gt;
 - O atalho ALT + **-** gera o operador **&lt;-** &lt;br&gt;&lt;/br&gt;
@@ -584,229 +588,7 @@ ativo
 
 
 ---
-# Classes Básicas ou Atômicas do R
 
-- **Character**: texto &lt;br&gt;&lt;/br&gt;
-- **Integer**: números inteiros &lt;br&gt;&lt;/br&gt;
-- **Numeric**: números racionais &lt;br&gt;&lt;/br&gt;
-- **Complex**: números complexos (raramente usados para Análise de Dados) &lt;br&gt;&lt;/br&gt;
-- **Logical**: TRUE, FALSE ou NA &lt;br&gt;&lt;/br&gt;
-- **Factor**: variavéis categóricas
-
----
-
-# Exemplos: character
-
-
-```r
-"escola"
-```
-
-```
-## [1] "escola"
-```
-
-```r
-"2019"
-```
-
-```
-## [1] "2019"
-```
-
-```r
-"I love pinschers."
-```
-
-```
-## [1] "I love pinschers."
-```
-
----
-
-# Exemplos: integer
-
-
-```r
-10L #Um número inteiro pode ser representado acompanhado de um L
-```
-
-```
-## [1] 10
-```
-
-```r
-2019L
-```
-
-```
-## [1] 2019
-```
-
----
-
-# Exemplos: numeric
-
-
-```r
-10
-```
-
-```
-## [1] 10
-```
-
-```r
-2019
-```
-
-```
-## [1] 2019
-```
-
-```r
-5.44
-```
-
-```
-## [1] 5.44
-```
-
----
-# Exemplos: complex
-
-```r
-4 + 9i
-```
-
-```
-## [1] 4+9i
-```
-
----
-
-# Exemplos: logical
-
-```r
-TRUE
-```
-
-```
-## [1] TRUE
-```
-
-```r
-FALSE
-```
-
-```
-## [1] FALSE
-```
-
----
-
-# Exemplos: factor
-
-
-
-```r
-escolaridade &lt;- c("Médio", "Superior", "Fundamental", "Fundamental", "Médio")
-fator &lt;- as.factor(escolaridade)
-fator
-```
-
-```
-## [1] Médio       Superior    Fundamental Fundamental Médio      
-## Levels: Fundamental Médio Superior
-```
-
-
-&lt;br&gt;&lt;/br&gt;
-
-A função as.factor() criou um objeto do tipo factor.
-
-Na linha *Levels* aparecem os rótulos do fator.
-
-Essa classe de dados pode ser trabalhada com o pacote **forcats**.
-
----
-
-# Função class: 
-
-A função **class** mostra a classe de um objeto.
-
-
-```r
-nome_filme &lt;- "Bohemian Rhapsody"
-class(nome_filme)
-```
-
-```
-## [1] "character"
-```
-
-```r
-ano_inteiro &lt;- 2018L
-class(ano_inteiro)
-```
-
-```
-## [1] "integer"
-```
-
-```r
-ano &lt;- 2018
-class(ano)
-```
-
-```
-## [1] "numeric"
-```
-
----
-
-# Função class
-
-
-```r
-motor &lt;- 1.5
-class(motor)
-```
-
-```
-## [1] "numeric"
-```
-
-```r
-passou_enem &lt;- TRUE
-class(passou_enem)
-```
-
-```
-## [1] "logical"
-```
-
----
-
-# Desafio 3
-
-1)
-
-2)
-
----
-
-# Desafio 3 - Resposta
-
-1) 
-
-
-
-2) 
-
-
-
----
 
 # Tipos de objetos:
 
@@ -1041,7 +823,230 @@ class(vetor_logical)
 
 ---
 
-# Desafio 4
+# Desafio 3
+
+1)
+
+2)
+
+---
+
+# Desafio 3 - Resposta
+
+1) 
+
+
+
+2) 
+
+
+
+---
+# Classes Básicas ou Atômicas do R
+
+- **Character**: texto &lt;br&gt;&lt;/br&gt;
+- **Integer**: números inteiros &lt;br&gt;&lt;/br&gt;
+- **Numeric**: números racionais &lt;br&gt;&lt;/br&gt;
+- **Complex**: números complexos (raramente usados para Análise de Dados) &lt;br&gt;&lt;/br&gt;
+- **Logical**: TRUE, FALSE ou NA &lt;br&gt;&lt;/br&gt;
+- **Factor**: variavéis categóricas
+
+---
+
+# Exemplos: character
+
+
+```r
+"escola"
+```
+
+```
+## [1] "escola"
+```
+
+```r
+"2019"
+```
+
+```
+## [1] "2019"
+```
+
+```r
+"I love pinschers."
+```
+
+```
+## [1] "I love pinschers."
+```
+
+---
+
+# Exemplos: integer
+
+
+```r
+10L #Um número inteiro pode ser representado acompanhado de um L
+```
+
+```
+## [1] 10
+```
+
+```r
+2019L
+```
+
+```
+## [1] 2019
+```
+
+---
+
+# Exemplos: numeric
+
+
+```r
+10
+```
+
+```
+## [1] 10
+```
+
+```r
+2019
+```
+
+```
+## [1] 2019
+```
+
+```r
+5.44
+```
+
+```
+## [1] 5.44
+```
+
+---
+# Exemplos: complex
+
+```r
+4 + 9i
+```
+
+```
+## [1] 4+9i
+```
+
+---
+
+# Exemplos: logical
+
+```r
+TRUE
+```
+
+```
+## [1] TRUE
+```
+
+```r
+FALSE
+```
+
+```
+## [1] FALSE
+```
+
+---
+
+# Exemplos: factor
+
+
+
+```r
+escolaridade &lt;- c("Médio", "Superior", "Fundamental", "Fundamental", "Médio")
+fator &lt;- as.factor(escolaridade)
+fator
+```
+
+```
+## [1] Médio       Superior    Fundamental Fundamental Médio      
+## Levels: Fundamental Médio Superior
+```
+
+
+&lt;br&gt;&lt;/br&gt;
+
+A função as.factor() criou um objeto do tipo factor.
+
+Na linha *Levels* aparecem os rótulos do fator.
+
+Essa classe de dados pode ser trabalhada com o pacote **forcats**.
+
+---
+
+# Função class: 
+
+A função **class** mostra a classe de um objeto.
+
+
+```r
+nome_filme &lt;- "Bohemian Rhapsody"
+class(nome_filme)
+```
+
+```
+## [1] "character"
+```
+
+```r
+ano_inteiro &lt;- 2018L
+class(ano_inteiro)
+```
+
+```
+## [1] "integer"
+```
+
+```r
+ano &lt;- 2018
+class(ano)
+```
+
+```
+## [1] "numeric"
+```
+
+---
+
+# Função class
+
+
+```r
+motor &lt;- 1.5
+class(motor)
+```
+
+```
+## [1] "numeric"
+```
+
+```r
+passou_enem &lt;- TRUE
+class(passou_enem)
+```
+
+```
+## [1] "logical"
+```
+
+---
+
+# Desafio 3
 
 1)
 

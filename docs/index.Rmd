@@ -178,6 +178,10 @@ knitr::include_graphics("img/Rlogo.png")
 
 - Está disponível em diferentes plataformas: Windows, Linux e Mac
 
+- É reprodutível!
+
+- Compartilhável!
+
 ---
 
 # O que podemos fazer com o R?
@@ -400,25 +404,24 @@ Os atalhos facilitam. Veja os principais:<br></br>
 - CTRL + SHIFT + M: (%>%) operador pipe.<br></br>
 ---
 
-class: center, middle
-# R Básico
-
----
-
 # E lá vamos nós!
 
 <center><img src="img/S5e27_T.V._typing.gif"></center> 
 
 ---
+class: center, middle
+# R Básico
 
+---
 # Instruções
 
 - Abrir o RStudio da sua máquina <br></br>
 
 - Abrir um novo R script (file -> new file -> R script)
 ---
-
 # R como calculadora
+
+- O R permite realizar muitas operações aritméticas em seu console!
 
 ```{r}
 2 + 5    # adição
@@ -459,32 +462,24 @@ Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio
 ---
 # Desafio 1
 
-1)
-
-2)
+Daenerys quer conquistar uma aldeia com os seus dois dragões. Cada dragão mata 32 ovelhas e 90 pessoas a cada 1 hora. Considerando que ela atacará a aldeia por 4h, quantas ovelhas e pessoas ao todo os dragões irão assassinar após o ataque?
 
 ---
 
-# Desafio 1 - Resposta
+# Desafio - Resposta
 
-1) 
-
-```{r}
-
-```
-
-2) 
+Daenerys quer conquistar uma aldeia com os seus dois dragões. Cada dragão mata 32 ovelhas e 90 pessoas a cada 1 hora. Considerando que ela atacará a aldeia por 4h, quantas ovelhas e pessoas ao todo os dragões irão assassinar após o ataque? 
 
 ```{r}
-
+2*32*4 + 2*90*4
 ```
 
 ---
-# O que é um objeto?
+# O que é uma variável?
 
 ---
 
-# Criando objetos no R
+# Atribuindo valor a uma variável no R
 
 - Para atribuir um valor a um objeto no R, utilizamos o operador **<-**  <br></br>
 - O atalho ALT + **-** gera o operador **<-** <br></br>
@@ -539,129 +534,7 @@ ativo
 ```
 
 ---
-# Classes Básicas ou Atômicas do R
 
-- **Character**: texto <br></br>
-- **Integer**: números inteiros <br></br>
-- **Numeric**: números racionais <br></br>
-- **Complex**: números complexos (raramente usados para Análise de Dados) <br></br>
-- **Logical**: TRUE, FALSE ou NA <br></br>
-- **Factor**: variavéis categóricas
-
----
-
-# Exemplos: character
-
-```{r}
-"escola"
-"2019"
-"I love pinschers."
-```
-
----
-
-# Exemplos: integer
-
-```{r}
-10L #Um número inteiro pode ser representado acompanhado de um L
-2019L
-```
-
----
-
-# Exemplos: numeric
-
-```{r}
-10
-2019
-5.44
-```
-
----
-# Exemplos: complex
-```{r}
-4 + 9i
-```
-
----
-
-# Exemplos: logical
-```{r}
-TRUE
-FALSE
-```
-
----
-
-# Exemplos: factor
-
-
-```{r}
-escolaridade <- c("Médio", "Superior", "Fundamental", "Fundamental", "Médio")
-fator <- as.factor(escolaridade)
-fator
-```
-
-
-<br></br>
-
-A função as.factor() criou um objeto do tipo factor.
-
-Na linha *Levels* aparecem os rótulos do fator.
-
-Essa classe de dados pode ser trabalhada com o pacote **forcats**.
-
----
-
-# Função class: 
-
-A função **class** mostra a classe de um objeto.
-
-```{r}
-nome_filme <- "Bohemian Rhapsody"
-class(nome_filme)
-ano_inteiro <- 2018L
-class(ano_inteiro)
-ano <- 2018
-class(ano)
-```
-
----
-
-# Função class
-
-```{r}
-motor <- 1.5
-class(motor)
-passou_enem <- TRUE
-class(passou_enem)
-```
-
----
-
-# Desafio 3
-
-1)
-
-2)
-
----
-
-# Desafio 3 - Resposta
-
-1) 
-
-```{r}
-
-```
-
-2) 
-
-```{r}
-
-```
-
----
 
 # Tipos de objetos:
 
@@ -796,7 +669,130 @@ class(vetor_logical)
 
 ---
 
-# Desafio 4
+# Desafio 3
+
+1)
+
+2)
+
+---
+
+# Desafio 3 - Resposta
+
+1) 
+
+```{r}
+
+```
+
+2) 
+
+```{r}
+
+```
+
+---
+# Classes Básicas ou Atômicas do R
+
+- **Character**: texto <br></br>
+- **Integer**: números inteiros <br></br>
+- **Numeric**: números racionais <br></br>
+- **Complex**: números complexos (raramente usados para Análise de Dados) <br></br>
+- **Logical**: TRUE, FALSE ou NA <br></br>
+- **Factor**: variavéis categóricas
+
+---
+
+# Exemplos: character
+
+```{r}
+"escola"
+"2019"
+"I love pinschers."
+```
+
+---
+
+# Exemplos: integer
+
+```{r}
+10L #Um número inteiro pode ser representado acompanhado de um L
+2019L
+```
+
+---
+
+# Exemplos: numeric
+
+```{r}
+10
+2019
+5.44
+```
+
+---
+# Exemplos: complex
+```{r}
+4 + 9i
+```
+
+---
+
+# Exemplos: logical
+```{r}
+TRUE
+FALSE
+```
+
+---
+
+# Exemplos: factor
+
+
+```{r}
+escolaridade <- c("Médio", "Superior", "Fundamental", "Fundamental", "Médio")
+fator <- as.factor(escolaridade)
+fator
+```
+
+
+<br></br>
+
+A função as.factor() criou um objeto do tipo factor.
+
+Na linha *Levels* aparecem os rótulos do fator.
+
+Essa classe de dados pode ser trabalhada com o pacote **forcats**.
+
+---
+
+# Função class: 
+
+A função **class** mostra a classe de um objeto.
+
+```{r}
+nome_filme <- "Bohemian Rhapsody"
+class(nome_filme)
+ano_inteiro <- 2018L
+class(ano_inteiro)
+ano <- 2018
+class(ano)
+```
+
+---
+
+# Função class
+
+```{r}
+motor <- 1.5
+class(motor)
+passou_enem <- TRUE
+class(passou_enem)
+```
+
+---
+
+# Desafio 3
 
 1)
 
