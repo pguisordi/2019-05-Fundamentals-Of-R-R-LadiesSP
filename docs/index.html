@@ -493,7 +493,7 @@ Daenerys quer conquistar uma aldeia com os seus dois dragões. Cada dragão mata
 
 ---
 
-# Desafio - Resposta
+# Desafio 1 - Resposta
 
 Daenerys quer conquistar uma aldeia com os seus dois dragões. Cada dragão mata 32 ovelhas e 90 pessoas a cada 1 hora. Considerando que ela atacará a aldeia por 4h, quantas ovelhas e pessoas ao todo os dragões irão assassinar após o ataque? 
 
@@ -508,13 +508,19 @@ Daenerys quer conquistar uma aldeia com os seus dois dragões. Cada dragão mata
 
 ---
 # O que é uma variável?
+- Ao se desenvolver um projeto, você irá trabalhar com diversos tipos de arquivos, além de informações que serão repetidas ao longo do script.
 
+- Para reutilizar essas informações ao longo do script utilizamos o que chamamos de **variável**
+
+- Uma variável é um espaço de memória que retém e representa um valor ou expressão
 ---
 
 # Atribuindo valor a uma variável no R
 
 - Para atribuir um valor a um objeto no R, utilizamos o operador **&lt;-**  &lt;br&gt;&lt;/br&gt;
+
 - O atalho ALT + **-** gera o operador **&lt;-** &lt;br&gt;&lt;/br&gt;
+
 - Todas as declarações R onde são criados objetos atribuindo valores a eles, tem a mesma forma:  
 
 &lt;center&gt;&lt;b&gt;nome_do_objeto &lt;- valor&lt;b&gt;&lt;/center&gt;
@@ -562,288 +568,66 @@ ativo
 
 ---
 # Nomes de objetos e variáveis
-
 - Os nomes devem começar com uma letra. Podem conter letras, números, _ e .&lt;br&gt;&lt;/br&gt;
+
 - Recomendação do autor do livro R For Data Science: **usar_snake_case**, ou seja, palavras escritas em minúsculo separadas pelo underscore (_).&lt;br&gt;&lt;/br&gt;
+
 - O R é *case sensitive*, isto é, faz a diferenciação entre as letras minúsculas e maiúsculas. Portanto, um objeto chamado *teste* é diferente de um outro objeto chamado *Teste*.
 
 ---
 
 # Desafio 2
-
-1)
-
-2)
+1) Crie variáveis para os casos abaixo (cuidado com os nomes dados! Usaremos nos próximos desafios!): 
+- DC com valor 42
+- Marvel com valor de 23
+- Herói com valor de Superman
+- Vingadores com valor de 63
 
 ---
 
 # Desafio 2 - Resposta
 
-1) 
-
-
-
-2) 
-
-
-
----
-
-
-# Tipos de objetos:
-
-- **Vector**: armazena elementos de mesma classe. &lt;br&gt;&lt;/br&gt;   
-- **Matrix**: vetores de duas dimensões que armazenam elementos de mesma classe. &lt;br&gt;&lt;/br&gt;
-- **List**: tipo especial de vetor que aceita elementos de classes diferentes. &lt;br&gt;&lt;/br&gt;
-- **Data.frame**: são tabelas de dados com linhas e colunas, como uma tabela do Excel. Como são listas, essas colunas podem ser de classes diferentes.
-
----
-
-# Exemplo: Vector
-
-A função c() cria um vetor.
-
-```r
-semestre1 &lt;- c("janeiro", "fevereiro", "março", "abril", "maio", "junho")
-notas_alunos &lt;- c(5, 6.5, 10, 0.5, 2.75, 3, 9)
-```
-
-É possível realizar operações com vetores.
+1) 1) Crie variáveis para os casos abaixo (cuidado com os nomes dados! Usaremos nos próximos desafios!): 
 
 
 ```r
-vetor1 &lt;- 1:5
-vetor1 / 5   #Objeto vetor1 dividido por 5
+dc &lt;- 42
+dc
 ```
 
 ```
-## [1] 0.2 0.4 0.6 0.8 1.0
-```
-
-
-```r
-vetor2 &lt;- 6:10
-vetor1 * vetor2
-```
-
-```
-## [1]  6 14 24 36 50
-```
-
----
-
-# Exemplo: Matrix
-
-A função matrix() cria uma matriz.
-
-```r
-primeira_matriz &lt;- matrix(1:8, nrow = 2, ncol = 4)
-primeira_matriz
-```
-
-```
-##      [,1] [,2] [,3] [,4]
-## [1,]    1    3    5    7
-## [2,]    2    4    6    8
-```
-
-A funçăo dim() retorna a dimensăo do objeto (linha e coluna).
-
-```r
-dim(primeira_matriz)
-```
-
-```
-## [1] 2 4
-```
-
----
-
-# Exemplo: List
-
-A função list() cria uma lista.
-
-```r
-wizards &lt;- list("Harry Potter", 18, TRUE, c("Hermione Granger", "Rony Weasley"))
-class(wizards)
-```
-
-```
-## [1] "list"
-```
-
-A função is.list() verifica se o objeto é ou não uma lista.
-
-
-```r
-harry_friends &lt;- c("Hermione Granger", "Rony Weasley")
-class(harry_friends)
-```
-
-```
-## [1] "character"
+## [1] 42
 ```
 
 ```r
-is.list(harry_friends)
+marvel &lt;- 23
+marvel
 ```
 
 ```
-## [1] FALSE
-```
-
----
-
-# Exemplo: Data.frame
-
-
-A função head() mostra as primeiras 6 linhas do dataframe.
-
-```r
-data(iris)
-
-df &lt;- iris
-
-head(df)
-```
-
-```
-##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 1          5.1         3.5          1.4         0.2  setosa
-## 2          4.9         3.0          1.4         0.2  setosa
-## 3          4.7         3.2          1.3         0.2  setosa
-## 4          4.6         3.1          1.5         0.2  setosa
-## 5          5.0         3.6          1.4         0.2  setosa
-## 6          5.4         3.9          1.7         0.4  setosa
-```
-
-**Tibble** é uma releitura moderna do data.frame.
-
-
----
-
-# Funções úteis para trabalhar com dataframes
-
-- tail(): mostra as últimas 6 linhas.
-
-- names(): mostra os nomes das colunas.
-
-- glimpse(): mostra várias informações sobre o Tibble, como o número de observações (linhas) e variáveis (colunas), o nome das colunas e o tipo delas.
-
----
-
-# Conversão de classes: 
-
-Podemos forçar um objeto a ser de uma classe específica com as funções:  
-- as.character() &lt;br&gt;&lt;/br&gt;
-- as.numeric() &lt;br&gt;&lt;/br&gt;
-- as.integer() &lt;br&gt;&lt;/br&gt;
-- as.logical() &lt;br&gt;&lt;/br&gt;
-
----
-
-# Exemplo de conversão de classes
-
-
-```r
-vetor &lt;- 0:9
-vetor
-```
-
-```
-##  [1] 0 1 2 3 4 5 6 7 8 9
+## [1] 23
 ```
 
 ```r
-class(vetor)
+heroi &lt;- "Superman"
+heroi
 ```
 
 ```
-## [1] "integer"
-```
-
-```r
-vetor_numeric &lt;- as.numeric(vetor)
-vetor_numeric
-```
-
-```
-##  [1] 0 1 2 3 4 5 6 7 8 9
+## [1] "Superman"
 ```
 
 ```r
-class(vetor_numeric)
+vingadores &lt;- 63
+vingadores
 ```
 
 ```
-## [1] "numeric"
+## [1] 63
 ```
-
----
-
-# Exemplo de conversão de classes
-
-
-```r
-vetor_character &lt;- as.character(vetor)
-vetor_character
-```
-
-```
-##  [1] "0" "1" "2" "3" "4" "5" "6" "7" "8" "9"
-```
-
-```r
-class(vetor_character)
-```
-
-```
-## [1] "character"
-```
-
-```r
-vetor_logical &lt;- as.logical(vetor)
-vetor_logical
-```
-
-```
-##  [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-```
-
-```r
-class(vetor_logical)
-```
-
-```
-## [1] "logical"
-```
-
----
-# Operações com strings
-
----
-
-# Desafio 3
-
-1)
-
-2)
-
----
-
-# Desafio 3 - Resposta
-
-1) 
-
-
-
-2) 
-
-
 
 ---
 # Classes Básicas ou Atômicas do R
-
 - **Character**: texto &lt;br&gt;&lt;/br&gt;
 - **Integer**: números inteiros &lt;br&gt;&lt;/br&gt;
 - **Numeric**: números racionais &lt;br&gt;&lt;/br&gt;
@@ -1045,24 +829,290 @@ class(passou_enem)
 ```
 
 ---
+# Operações simples com strings
 
-# Desafio 3
 
-1)
+```r
+animal &lt;- "Camaleao"
+#letras maiúsculas
+toupper(animal)
+```
 
-2)
+```
+## [1] "CAMALEAO"
+```
+
+```r
+#letras minúsculas
+tolower(animal)
+```
+
+```
+## [1] "camaleao"
+```
+
+```r
+#número de caracteres
+nchar(animal)
+```
+
+```
+## [1] 8
+```
+
+---
+# Conversão de classes: 
+
+Podemos forçar um objeto a ser de uma classe específica com as funções:  
+- as.character() &lt;br&gt;&lt;/br&gt;
+- as.numeric() &lt;br&gt;&lt;/br&gt;
+- as.integer() &lt;br&gt;&lt;/br&gt;
+- as.logical() &lt;br&gt;&lt;/br&gt;
 
 ---
 
-# Desafio 4 - Resposta
-
-1) 
+# Exemplo de conversão de classes
 
 
+```r
+vetor &lt;- 0:9
+vetor
+```
+
+```
+##  [1] 0 1 2 3 4 5 6 7 8 9
+```
+
+```r
+class(vetor)
+```
+
+```
+## [1] "integer"
+```
+
+```r
+vetor_numeric &lt;- as.numeric(vetor)
+vetor_numeric
+```
+
+```
+##  [1] 0 1 2 3 4 5 6 7 8 9
+```
+
+```r
+class(vetor_numeric)
+```
+
+```
+## [1] "numeric"
+```
+
+---
+
+# Exemplo de conversão de classes
+
+
+```r
+vetor_character &lt;- as.character(vetor)
+vetor_character
+```
+
+```
+##  [1] "0" "1" "2" "3" "4" "5" "6" "7" "8" "9"
+```
+
+```r
+class(vetor_character)
+```
+
+```
+## [1] "character"
+```
+
+```r
+vetor_logical &lt;- as.logical(vetor)
+vetor_logical
+```
+
+```
+##  [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+```
+
+```r
+class(vetor_logical)
+```
+
+```
+## [1] "logical"
+```
+
+---
+
+# Desafio 3
+
+1) Converta a variável Vingadores criada anteriormente para character. Agora cheque sua classe. O que acontece com seu valor?
+
+2) 
+---
+
+# Desafio 3 - Resposta
+
+1) Converta a variável Vingadores criada anteriormente para character. Agora cheque sua classe. O que acontece com seu valor? 
+
+
+```r
+as.character(vingadores)
+```
+
+```
+## [1] "63"
+```
 
 2) 
 
 
+
+---
+# Tipos de variáveis:
+
+- **Vector**: armazena elementos de mesma classe. &lt;br&gt;&lt;/br&gt;   
+- **Matrix**: vetores de duas dimensões que armazenam elementos de mesma classe. &lt;br&gt;&lt;/br&gt;
+- **List**: tipo especial de vetor que aceita elementos de classes diferentes. &lt;br&gt;&lt;/br&gt;
+- **Data.frame**: são tabelas de dados com linhas e colunas, como uma tabela do Excel. Como são listas, essas colunas podem ser de classes diferentes.
+
+---
+
+# Exemplo: Vector
+
+A função c() cria um vetor.
+
+```r
+semestre1 &lt;- c("janeiro", "fevereiro", "março", "abril", "maio", "junho")
+notas_alunos &lt;- c(5, 6.5, 10, 0.5, 2.75, 3, 9)
+```
+
+É possível realizar operações com vetores.
+
+
+```r
+vetor1 &lt;- 1:5
+vetor1 / 5   #Objeto vetor1 dividido por 5
+```
+
+```
+## [1] 0.2 0.4 0.6 0.8 1.0
+```
+
+
+```r
+vetor2 &lt;- 6:10
+vetor1 * vetor2
+```
+
+```
+## [1]  6 14 24 36 50
+```
+
+---
+
+# Exemplo: Matrix
+
+A função matrix() cria uma matriz.
+
+```r
+primeira_matriz &lt;- matrix(1:8, nrow = 2, ncol = 4)
+primeira_matriz
+```
+
+```
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    3    5    7
+## [2,]    2    4    6    8
+```
+
+A funçăo dim() retorna a dimensăo do objeto (linha e coluna).
+
+```r
+dim(primeira_matriz)
+```
+
+```
+## [1] 2 4
+```
+
+---
+
+# Exemplo: List
+
+A função list() cria uma lista.
+
+```r
+wizards &lt;- list("Harry Potter", 18, TRUE, c("Hermione Granger", "Rony Weasley"))
+class(wizards)
+```
+
+```
+## [1] "list"
+```
+
+A função is.list() verifica se o objeto é ou não uma lista.
+
+
+```r
+harry_friends &lt;- c("Hermione Granger", "Rony Weasley")
+class(harry_friends)
+```
+
+```
+## [1] "character"
+```
+
+```r
+is.list(harry_friends)
+```
+
+```
+## [1] FALSE
+```
+
+---
+
+# Exemplo: Data.frame
+
+
+A função head() mostra as primeiras 6 linhas do dataframe.
+
+```r
+data(iris)
+
+df &lt;- iris
+
+head(df)
+```
+
+```
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+```
+
+**Tibble** é uma releitura moderna do data.frame.
+
+
+---
+
+# Funções úteis para trabalhar com dataframes
+
+- tail(): mostra as últimas 6 linhas.
+
+- names(): mostra os nomes das colunas.
+
+- glimpse(): mostra várias informações sobre o Tibble, como o número de observações (linhas) e variáveis (colunas), o nome das colunas e o tipo delas.
 
 ---
 

@@ -466,7 +466,7 @@ Daenerys quer conquistar uma aldeia com os seus dois dragões. Cada dragão mata
 
 ---
 
-# Desafio - Resposta
+# Desafio 1 - Resposta
 
 Daenerys quer conquistar uma aldeia com os seus dois dragões. Cada dragão mata 32 ovelhas e 90 pessoas a cada 1 hora. Considerando que ela atacará a aldeia por 4h, quantas ovelhas e pessoas ao todo os dragões irão assassinar após o ataque? 
 
@@ -476,13 +476,19 @@ Daenerys quer conquistar uma aldeia com os seus dois dragões. Cada dragão mata
 
 ---
 # O que é uma variável?
+- Ao se desenvolver um projeto, você irá trabalhar com diversos tipos de arquivos, além de informações que serão repetidas ao longo do script.
 
+- Para reutilizar essas informações ao longo do script utilizamos o que chamamos de **variável**
+
+- Uma variável é um espaço de memória que retém e representa um valor ou expressão
 ---
 
 # Atribuindo valor a uma variável no R
 
 - Para atribuir um valor a um objeto no R, utilizamos o operador **<-**  <br></br>
+
 - O atalho ALT + **-** gera o operador **<-** <br></br>
+
 - Todas as declarações R onde são criados objetos atribuindo valores a eles, tem a mesma forma:  
 
 <center><b>nome_do_objeto <- valor<b></center>
@@ -504,196 +510,40 @@ ativo
 
 ---
 # Nomes de objetos e variáveis
-
 - Os nomes devem começar com uma letra. Podem conter letras, números, _ e .<br></br>
+
 - Recomendação do autor do livro R For Data Science: **usar_snake_case**, ou seja, palavras escritas em minúsculo separadas pelo underscore (_).<br></br>
+
 - O R é *case sensitive*, isto é, faz a diferenciação entre as letras minúsculas e maiúsculas. Portanto, um objeto chamado *teste* é diferente de um outro objeto chamado *Teste*.
 
 ---
 
 # Desafio 2
-
-1)
-
-2)
+1) Crie variáveis para os casos abaixo (cuidado com os nomes dados! Usaremos nos próximos desafios!): 
+- DC com valor 42
+- Marvel com valor de 23
+- Herói com valor de Superman
+- Vingadores com valor de 63
 
 ---
 
 # Desafio 2 - Resposta
 
-1) 
+1) 1) Crie variáveis para os casos abaixo (cuidado com os nomes dados! Usaremos nos próximos desafios!): 
 
 ```{r}
-
-```
-
-2) 
-
-```{r}
-
-```
-
----
-
-
-# Tipos de objetos:
-
-- **Vector**: armazena elementos de mesma classe. <br></br>   
-- **Matrix**: vetores de duas dimensões que armazenam elementos de mesma classe. <br></br>
-- **List**: tipo especial de vetor que aceita elementos de classes diferentes. <br></br>
-- **Data.frame**: são tabelas de dados com linhas e colunas, como uma tabela do Excel. Como são listas, essas colunas podem ser de classes diferentes.
-
----
-
-# Exemplo: Vector
-
-A função c() cria um vetor.
-```{r}
-semestre1 <- c("janeiro", "fevereiro", "março", "abril", "maio", "junho")
-notas_alunos <- c(5, 6.5, 10, 0.5, 2.75, 3, 9)
-```
-
-É possível realizar operações com vetores.
-
-```{r}
-vetor1 <- 1:5
-vetor1 / 5   #Objeto vetor1 dividido por 5
-```
-
-```{r}
-vetor2 <- 6:10
-vetor1 * vetor2
-```
-
----
-
-# Exemplo: Matrix
-
-A função matrix() cria uma matriz.
-```{r}
-primeira_matriz <- matrix(1:8, nrow = 2, ncol = 4)
-primeira_matriz
-```
-
-A funçăo dim() retorna a dimensăo do objeto (linha e coluna).
-```{r}
-dim(primeira_matriz)
-```
-
----
-
-# Exemplo: List
-
-A função list() cria uma lista.
-```{r}
-wizards <- list("Harry Potter", 18, TRUE, c("Hermione Granger", "Rony Weasley"))
-class(wizards)
-```
-
-A função is.list() verifica se o objeto é ou não uma lista.
-
-```{r}
-harry_friends <- c("Hermione Granger", "Rony Weasley")
-class(harry_friends)
-is.list(harry_friends)
-```
-
----
-
-# Exemplo: Data.frame
-
-
-A função head() mostra as primeiras 6 linhas do dataframe.
-```{r}
-data(iris)
-
-df <- iris
-
-head(df)
-```
-
-**Tibble** é uma releitura moderna do data.frame.
-
-
----
-
-# Funções úteis para trabalhar com dataframes
-
-- tail(): mostra as últimas 6 linhas.
-
-- names(): mostra os nomes das colunas.
-
-- glimpse(): mostra várias informações sobre o Tibble, como o número de observações (linhas) e variáveis (colunas), o nome das colunas e o tipo delas.
-
----
-
-# Conversão de classes: 
-
-Podemos forçar um objeto a ser de uma classe específica com as funções:  
-- as.character() <br></br>
-- as.numeric() <br></br>
-- as.integer() <br></br>
-- as.logical() <br></br>
-
----
-
-# Exemplo de conversão de classes
-
-```{r}
-vetor <- 0:9
-vetor
-class(vetor)
-
-vetor_numeric <- as.numeric(vetor)
-vetor_numeric
-class(vetor_numeric)
-```
-
----
-
-# Exemplo de conversão de classes
-
-```{r}
-vetor_character <- as.character(vetor)
-vetor_character
-class(vetor_character)
-
-
-vetor_logical <- as.logical(vetor)
-vetor_logical
-class(vetor_logical)
-```
-
----
-# Operações com strings
-
----
-
-# Desafio 3
-
-1)
-
-2)
-
----
-
-# Desafio 3 - Resposta
-
-1) 
-
-```{r}
-
-```
-
-2) 
-
-```{r}
-
+dc <- 42
+dc
+marvel <- 23
+marvel
+heroi <- "Superman"
+heroi
+vingadores <- 63
+vingadores
 ```
 
 ---
 # Classes Básicas ou Atômicas do R
-
 - **Character**: texto <br></br>
 - **Integer**: números inteiros <br></br>
 - **Numeric**: números racionais <br></br>
@@ -791,21 +641,71 @@ class(passou_enem)
 ```
 
 ---
+# Operações simples com strings
 
-# Desafio 3
+```{r}
+animal <- "Camaleao"
+#letras maiúsculas
+toupper(animal)
+#letras minúsculas
+tolower(animal)
+#número de caracteres
+nchar(animal)
+```
 
-1)
+---
+# Conversão de classes: 
 
-2)
+Podemos forçar um objeto a ser de uma classe específica com as funções:  
+- as.character() <br></br>
+- as.numeric() <br></br>
+- as.integer() <br></br>
+- as.logical() <br></br>
 
 ---
 
-# Desafio 4 - Resposta
-
-1) 
+# Exemplo de conversão de classes
 
 ```{r}
+vetor <- 0:9
+vetor
+class(vetor)
 
+vetor_numeric <- as.numeric(vetor)
+vetor_numeric
+class(vetor_numeric)
+```
+
+---
+
+# Exemplo de conversão de classes
+
+```{r}
+vetor_character <- as.character(vetor)
+vetor_character
+class(vetor_character)
+
+
+vetor_logical <- as.logical(vetor)
+vetor_logical
+class(vetor_logical)
+```
+
+---
+
+# Desafio 3
+
+1) Converta a variável Vingadores criada anteriormente para character. Agora cheque sua classe. O que acontece com seu valor?
+
+2) 
+---
+
+# Desafio 3 - Resposta
+
+1) Converta a variável Vingadores criada anteriormente para character. Agora cheque sua classe. O que acontece com seu valor? 
+
+```{r}
+as.character(vingadores)
 ```
 
 2) 
@@ -813,6 +713,96 @@ class(passou_enem)
 ```{r}
 
 ```
+
+---
+# Tipos de variáveis:
+
+- **Vector**: armazena elementos de mesma classe. <br></br>   
+- **Matrix**: vetores de duas dimensões que armazenam elementos de mesma classe. <br></br>
+- **List**: tipo especial de vetor que aceita elementos de classes diferentes. <br></br>
+- **Data.frame**: são tabelas de dados com linhas e colunas, como uma tabela do Excel. Como são listas, essas colunas podem ser de classes diferentes.
+
+---
+
+# Exemplo: Vector
+
+A função c() cria um vetor.
+```{r}
+semestre1 <- c("janeiro", "fevereiro", "março", "abril", "maio", "junho")
+notas_alunos <- c(5, 6.5, 10, 0.5, 2.75, 3, 9)
+```
+
+É possível realizar operações com vetores.
+
+```{r}
+vetor1 <- 1:5
+vetor1 / 5   #Objeto vetor1 dividido por 5
+```
+
+```{r}
+vetor2 <- 6:10
+vetor1 * vetor2
+```
+
+---
+
+# Exemplo: Matrix
+
+A função matrix() cria uma matriz.
+```{r}
+primeira_matriz <- matrix(1:8, nrow = 2, ncol = 4)
+primeira_matriz
+```
+
+A funçăo dim() retorna a dimensăo do objeto (linha e coluna).
+```{r}
+dim(primeira_matriz)
+```
+
+---
+
+# Exemplo: List
+
+A função list() cria uma lista.
+```{r}
+wizards <- list("Harry Potter", 18, TRUE, c("Hermione Granger", "Rony Weasley"))
+class(wizards)
+```
+
+A função is.list() verifica se o objeto é ou não uma lista.
+
+```{r}
+harry_friends <- c("Hermione Granger", "Rony Weasley")
+class(harry_friends)
+is.list(harry_friends)
+```
+
+---
+
+# Exemplo: Data.frame
+
+
+A função head() mostra as primeiras 6 linhas do dataframe.
+```{r}
+data(iris)
+
+df <- iris
+
+head(df)
+```
+
+**Tibble** é uma releitura moderna do data.frame.
+
+
+---
+
+# Funções úteis para trabalhar com dataframes
+
+- tail(): mostra as últimas 6 linhas.
+
+- names(): mostra os nomes das colunas.
+
+- glimpse(): mostra várias informações sobre o Tibble, como o número de observações (linhas) e variáveis (colunas), o nome das colunas e o tipo delas.
 
 ---
 
