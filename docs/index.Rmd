@@ -1,6 +1,6 @@
 ---
-title: "Oficina de Fundamentos de R"
-subtitle: "R-Ladies São Paulo <br> <br> [bit.ly/rladiesSP6](http://bit.ly/rladiesSP6)"
+title: "Oficina Fundamentos de R"
+subtitle: "R-Ladies São Paulo <br> <br> [bit.ly/rladiesSP9](http://bit.ly/rladiesSP6)"
 date: "25/05/2019"
 encoding: "UTF-8"
 output:
@@ -66,6 +66,7 @@ class:   center, middle
 ```{r echo=FALSE, fig.align='center', out.width="20%"}
 knitr::include_graphics("img/gabriela.jpeg")
 ```
+
 **[Gabriela de Queiroz](https://github.com/gdequeiroz)** fundou o R-Ladies no dia **1 de outubro de 2012**. Ela queria retribuir à comunidade depois de ir a vários encontros e aprender muito de graça. O primeiro encontro R-Ladies foi realizado em ** San Francisco, Califórnia (Estados Unidos) **. Nos anos seguintes, mais capítulos do R-Ladies começaram em todo o mundo.
 
 Fonte: [About us - R-Ladies](https://rladies.org/about-us/history/)
@@ -133,11 +134,11 @@ class:   middle
 - Para aprender mais
 
 ---
-
 # O que é um algoritmo?
- - Pode ser definido com uma sequência de passos (instruções) para resolver um determinado problema.
+
+- Pode ser definido com uma sequência de passos (instruções) para resolver um determinado problema.
  
-Exemplo: definindo aprovações de alunos após avaliações de uma disciplina.
+- Exemplo: definindo aprovações de alunos após avaliações de uma disciplina.
 
 ```{r echo=FALSE, fig.align='center', out.width="70%"}
 knitr::include_graphics("img/algoritmo.jpg")
@@ -145,30 +146,26 @@ knitr::include_graphics("img/algoritmo.jpg")
 
 ---
 # O que é o R?
-
 > "R é um ambiente de software livre para computação estatística e gráficos". (https://www.r-project.org/)
 
+* Baseada na linguagem S   
 
-* O R é open-source;
-
-* Muito usado por cientistas de dados, estatísticos e pesquisadores.
-
+* 1ª versão de 1995 por Ross Ihaka e Robert Gentleman da Universidade de Auckland
 
 ```{r echo=FALSE, out.width="40%"}
 knitr::include_graphics("img/Rlogo.png")
 ```
 ---
 # O que é o R?
+* Berço na Estatística
 
-- Baseada na linguagem S   
+* Muito usado por cientistas de dados, estatísticos e pesquisadores.
 
-- 1ª versão de 1995 por Ross Ihaka e Robert Gentleman da Universidade de Auckland
+* Mantida pela [R Development Core Team](https://cran.r-project.org/) 
 
-- Berço na Estatística
-
-- Mantida pela [R Development Core Team](https://cran.r-project.org/) 
 
 ---
+
 # Por que usar o R?
 
 - É uma linguagem de programação para análise de dados
@@ -230,7 +227,7 @@ Fonte: [Rpollution](https://www.rpollution.com/)
 
 ---
 
-**Exemplo: Frequencia de Palavras - TESE Doutorado PROCAM/USP Ana Lucia Spinola;** 
+**Exemplo: Frequência de Palavras - TESE Doutorado PROCAM/USP Ana Lucia Spinola;** 
 
 ```{r echo=FALSE, out.width="90%"}
 knitr::include_graphics("img/ana-lu-freq.png") 
@@ -249,11 +246,21 @@ Fonte: [Ana Lu Spinola](https://analuspi.github.io/Text-Mining/)
 
 # Boas práticas para organizar seu projeto
 
+> Ao realizar um projeto, sempre organizar os arquivos em uma **pasta** que conterá todos os arquivos de seu projeto. 
 
-> 1. **Tratar dados como somente leitura: **esse é provavelmente o objetivo mais importante da configuração de um projeto. Os dados geralmente consomem tempo e/ou são caros para coletar. Trabalhar com eles interativamente (por exemplo, no Excel), onde eles podem ser modificados, significa que você nunca tem certeza de onde os dados vieram, ou como eles foram modificados desde a coleta. Portanto, é uma boa ideia tratar seus dados como “somente leitura”.
+> Nomear novos arquivos com **nomes descritivos**
 
-> 2. **Qualquer coisa gerada pelos seus scripts deve ser tratada como descartável: **todos devem poder ser criados novamente a partir dos seus scripts. Existem várias maneiras diferentes de gerenciar essa saída. Acho útil ter uma pasta de saída com subdiretórios diferentes para cada análise separada. Isso fica mais fácil depois, já que muitas das análises são exploratórias e não acabam sendo usadas no projeto final, e algumas análises são compartilhadas entre os projetos.
 
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/organização_arquivos.png") 
+```
+
+---
+# Boas práticas para organizar seu projeto
+
+> **Tratar dados como somente leitura: **esse é provavelmente o objetivo mais importante da configuração de um projeto. Os dados geralmente consomem tempo e/ou são caros para coletar. Trabalhar com eles interativamente (por exemplo, no Excel), onde eles podem ser modificados, significa que você nunca tem certeza de onde os dados vieram, ou como eles foram modificados desde a coleta. Portanto, é uma boa ideia tratar seus dados como “somente leitura”.
+
+> **Qualquer coisa gerada pelos seus scripts deve ser tratada como descartável: **todos devem poder ser criados novamente a partir dos seus scripts. Existem várias maneiras diferentes de gerenciar essa saída. Acho útil ter uma pasta de saída com subdiretórios diferentes para cada análise separada. Isso fica mais fácil depois, já que muitas das análises são exploratórias e não acabam sendo usadas no projeto final, e algumas análises são compartilhadas entre os projetos.
 
 Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/index.html)
 ---
@@ -380,8 +387,8 @@ help(sum)
 ?sum
 ```
 
-- Se a dúvida permanecer, procure no Stack OverFlow, Google.
-  - E se ainda tiver dúvidas, pergunte para a comunidade (há grupos no Telegram e outras redes sociais).
+- Se a dúvida permanecer, procure no [Stack OverFlow](https://stackoverflow.com/) ou Google.
+- E se ainda tiver dúvidas, pergunte para a comunidade (há grupos no Telegram e outras redes sociais).
 ---
 
 # Atalhos importantes
