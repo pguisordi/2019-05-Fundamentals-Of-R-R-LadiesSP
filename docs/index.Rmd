@@ -28,10 +28,10 @@ knitr::include_graphics("img/rladies.jpeg")
 ##Apoio:
 
 ```{r echo=FALSE, fig.align='center', out.width="50%"}
-knitr::include_graphics("img/conre-3.png")
+#knitr::include_graphics("img/conre-3.png") ALTERAR
 ```
 
-[CONRE-3](http://www.conre3.org.br/portal/)
+
 
 ---
 class:  center, middle
@@ -136,23 +136,38 @@ class:   middle
 ---
 # O que é um algoritmo?
 
-- Pode ser definido com uma sequência de passos (instruções) para resolver um determinado problema.
- 
-- Exemplo: definindo aprovações de alunos após avaliações de uma disciplina.
+Um algoritmo é uma sequência finita de instruções.
 
-```{r echo=FALSE, fig.align='center', out.width="70%"}
-knitr::include_graphics("img/algoritmo.jpg")
+**Exemplo**
+
+* receita de bolo
+```{r echo=FALSE, fig.align='center', out.width="60%"}
+knitr::include_graphics("bolo-kit-kat-4.jpg")
 ```
 
 ---
+#O que é programar? 
+Programar um computador é escrever instruções em qualquer **linguagem** que o computador entenda.
+
+Essa sequência de instruções pode ser executada por um humano ou um computador. Então, **programação é a arte de fazer com que o computador execute uma sequência de instruções definidas.**
+
+```{r}
+print('Ola!')
+
+```
+
+---
+
 # O que é o R?
 > "R é um ambiente de software livre para computação estatística e gráficos". (https://www.r-project.org/)
 
-* Baseada na linguagem S   
+**R** é um ambiente computacional e uma linguagem de programação que vem progressivamente se especializando em manipulação, análise e visualização gráfica de dados. Na atualidade é considerado o melhor ambiente computacional para essa finalidade. O ambiente está disponível para diferentes sistemas operacionais: Unix/Linux, Mac e Windows. 
+
+* Baseada na linguagem estatística S   
 
 * 1ª versão de 1995 por Ross Ihaka e Robert Gentleman da Universidade de Auckland
 
-```{r echo=FALSE, out.width="40%"}
+```{r echo=FALSE, out.width="30%"}
 knitr::include_graphics("img/Rlogo.png")
 ```
 ---
@@ -163,6 +178,7 @@ knitr::include_graphics("img/Rlogo.png")
 
 * Mantida pela [R Development Core Team](https://cran.r-project.org/) 
 
+* Pode ser usada para diversos fins.
 
 ---
 
@@ -181,6 +197,7 @@ knitr::include_graphics("img/Rlogo.png")
 - É reprodutível!
 
 - Compartilhável!
+
 
 ---
 
@@ -248,7 +265,7 @@ Fonte: [Ana Lu Spinola](https://analuspi.github.io/Text-Mining/)
 
 ---
 
-# Boas práticas para organizar seu projeto
+# Antes de começar, criar um projeto
 
 > Ao realizar um projeto, sempre organizar os arquivos em uma **pasta** que conterá todos os arquivos de seu projeto. 
 
@@ -270,6 +287,9 @@ Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/02-project
 ---
 
 # Criando um projeto
+```{r}
+# acho que esse criando m projeto poderia ser lá embaixo quando dar os desafios. O primeiro desafio seria criar um projeto (o que vcs acham?)
+```
 
 1. Clique na opção **“File”** do menu, e então em **“New Project”**.
 
@@ -302,7 +322,7 @@ class: center, middle
 
 # RStudio
 
-**RStudio** é o IDE da Linguagem R, ou seja, o ambiente que utilizamos para editar e executar os códigos em R. Tem quatro áreas, conforme a figura abaixo:
+**RStudio** é o IDE (integrated development environment) da Linguagem R, ou seja, o ambiente que utilizamos para editar e executar os códigos em R. Tem quatro áreas, conforme a figura abaixo:
 
 ```{r echo=FALSE, out.width="90%"}
 knitr::include_graphics("img/RStudio_screen.png")
@@ -481,6 +501,10 @@ Daenerys quer conquistar uma aldeia com os seus dois dragões. Cada dragão mata
 - Para reutilizar essas informações ao longo do script utilizamos o que chamamos de **variável**
 
 - Uma variável é um espaço de memória que retém e representa um valor ou expressão
+
+```{r echo=FALSE, fig.align='center', out.width="40%"}
+knitr::include_graphics("memoria.jpeg")
+```
 ---
 
 # Atribuindo valor a uma variável no R
@@ -697,7 +721,7 @@ class(vetor_logical)
 
 1) Converta a variável Vingadores criada anteriormente para character. Agora cheque sua classe. O que acontece com seu valor?
 
-2) 
+
 ---
 
 # Desafio 3 - Resposta
@@ -706,12 +730,6 @@ class(vetor_logical)
 
 ```{r}
 as.character(vingadores)
-```
-
-2) 
-
-```{r}
-
 ```
 
 ---
@@ -978,7 +996,7 @@ devtools::install_github("tidyverse/dplyr")
 - library(nome-do-pacote)
 
 ```{r, eval=TRUE, message=FALSE}
-library(tidyverse)
+#library(tidyverse)
 ```
 
 ---
