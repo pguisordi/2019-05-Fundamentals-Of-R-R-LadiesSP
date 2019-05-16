@@ -1,0 +1,1065 @@
+---
+title: "Oficina Fundamentos de R"
+subtitle: "R-Ladies São Paulo <br> <br> [bit.ly/rladiesSP9](http://bit.ly/rladiesSP6)"
+date: "25/05/2019"
+encoding: "UTF-8"
+output:
+  xaringan::moon_reader:
+    chakra: libs/remark-latest.min.js
+    css: [default, rladies, robot-fonts]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE, fig.align = "center")
+```
+class:  center, middle
+
+##Organização e realização:
+```{r echo=FALSE, fig.align='center', out.width="15%"}
+knitr::include_graphics("img/rladies.jpeg")
+```
+[R-Ladies São Paulo](https://www.meetup.com/R-Ladies-Sao-Paulo)
+
+##Apoio:
+
+```{r echo=FALSE, fig.align='center', out.width="50%"}
+#knitr::include_graphics("img/conre-3.png") ALTERAR
+```
+
+
+
+---
+class:  center, middle
+# O que é o R-Ladies?
+
+R-Ladies é uma organização mundial que promove a diversidade de gênero na comunidade da linguagem R.
+R-Ladies São Paulo integra, orgulhosamente, a organização R-Ladies Global, em São Paulo.
+
+# Como?
+
+Através de meetups e mentorias em um ambiente seguro e amigável.
+
+Nosso principal objetivo é promover a linguagem computacional estatística R compartilhando conhecimento, assim, quem tiver interesse na linguagem será bem-vinda, independente do nível de conhecimento. 
+
+
+Fonte: [About us - R-Ladies](https://rladies.org/about-us/), [Meetup R-Ladies São Paulo](https://www.meetup.com/R-Ladies-Sao-Paulo/)
+
+---
+class:   center, middle
+# Para quem?
+Nosso principal público-alvo são as pessoas que se identificam com o gênero feminino, portanto, mulheres cis, mulheres trans, bem como pessoas não-binárias e queer.
+
+# Missão
+
+Como uma iniciativa de diversidade, a missão das R-Ladies é alcançar uma representação proporcional de pessoas de gêneros atualmente sub-representados na comunidade R, incentivando, inspirando e caacitando-as.
+
+Fonte: [About us - R-Ladies](https://rladies.org/about-us/), [Meetup R-Ladies São Paulo](https://www.meetup.com/R-Ladies-Sao-Paulo/)
+
+---
+class:   center, middle
+## Como o R-Ladies começou?
+```{r echo=FALSE, fig.align='center', out.width="20%"}
+knitr::include_graphics("img/gabriela.jpeg")
+```
+
+**[Gabriela de Queiroz](https://github.com/gdequeiroz)** fundou o R-Ladies no dia **1 de outubro de 2012**. Ela queria retribuir à comunidade depois de ir a vários encontros e aprender muito de graça. O primeiro encontro R-Ladies foi realizado em ** San Francisco, Califórnia (Estados Unidos) **. Nos anos seguintes, mais capítulos do R-Ladies começaram em todo o mundo.
+
+Fonte: [About us - R-Ladies](https://rladies.org/about-us/history/)
+
+---
+class:center, middle
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/shiny.png")
+```
+
+Fonte: [R-Ladies Shiny App](https://gqueiroz.shinyapps.io/rshinylady/)  (01/05/2019)
+
+---
+class:   center, middle
+# Código de conduta
+
+
+O R-Ladies dedica-se a proporcionar uma experiência livre de assédio para todos. Não toleramos nenhuma forma de assédio aos participantes.
+
+
+[Código de conduta - R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese)
+
+---
+class:  center, middle
+# Como saber mais?
+
+[Meetup](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo)
+
+Twitter: [@RLadiesGlobal](https://twitter.com/rladiesglobal)
+
+Website: [https://rladies.org/](https://rladies.org/)
+
+R-Ladies LATAM Blog (Latin America) - Em breve!
+
+
+[R-Ladies - How do get involved](https://rladies.org/about-us/help/)
+
+---
+class:   center, middle
+
+# R-Ladies São Paulo
+
+
+```{r echo=FALSE, fig.align='center', out.width="70%"}
+knitr::include_graphics("img/1meetupsp.jpeg")
+```
+**Primero Meetup R-Ladies em São Paulo - Agosto/2018**
+
+
+---
+class:   middle
+# Cronograma de hoje
+
+- O que é um algoritmo?
+
+- O que é o R?
+
+- Boas Práticas de Programação
+
+- Introdução ao RStudio
+
+- Fundamentos de R
+
+- Para aprender mais
+
+---
+# O que é um algoritmo?
+
+Um algoritmo é uma sequência finita de instruções.
+
+**Exemplo**
+
+* receita de bolo
+```{r echo=FALSE, fig.align='center', out.width="60%"}
+knitr::include_graphics("bolo-kit-kat-4.jpg")
+```
+
+---
+#O que é programar? 
+Programar um computador é escrever instruções em qualquer **linguagem** que o computador entenda.
+
+Essa sequência de instruções pode ser executada por um humano ou um computador. Então, **programação é a arte de fazer com que o computador execute uma sequência de instruções definidas.**
+
+```{r}
+print('Ola!')
+
+```
+
+---
+
+# O que é o R?
+> "R é um ambiente de software livre para computação estatística e gráficos". (https://www.r-project.org/)
+
+**R** é um ambiente computacional e uma linguagem de programação que vem progressivamente se especializando em manipulação, análise e visualização gráfica de dados. Na atualidade é considerado o melhor ambiente computacional para essa finalidade. O ambiente está disponível para diferentes sistemas operacionais: Unix/Linux, Mac e Windows. 
+
+* Baseada na linguagem estatística S   
+
+* 1ª versão de 1995 por Ross Ihaka e Robert Gentleman da Universidade de Auckland
+
+```{r echo=FALSE, out.width="30%"}
+knitr::include_graphics("img/Rlogo.png")
+```
+---
+# O que é o R?
+* Berço na Estatística
+
+* Muito usado por cientistas de dados, estatísticos e pesquisadores.
+
+* Mantida pela [R Development Core Team](https://cran.r-project.org/) 
+
+* Pode ser usada para diversos fins.
+
+---
+
+# Por que usar o R?
+
+- É uma linguagem de programação para análise de dados
+
+- É open source 
+
+- Possui uma comunidade ativa de desenvolvedores
+
+- É flexível, permitindo desenvolver funções e pacotes para facilitar o trabalho 
+
+- Está disponível em diferentes plataformas: Windows, Linux e Mac
+
+- É reprodutível!
+
+- Compartilhável!
+
+
+---
+
+# O que podemos fazer com o R?
+
+* Análise de dados - Estatística, modelagem, etc.
+
+* Visualização de dados
+
+* Apresentações 
+
+* Relatórios dinâmicos
+
+* Escrever livros 
+
+* Mineração de dados
+
+* Muito mais ...
+
+---
+
+**Exemplo: Gráfico elaborado com R - Proposta Orçamentária PMSP 2019 - 10 maiores orçamentos** 
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("https://beatrizmilz.github.io/DadosExecucaoOrcamentariaPMSP/proposta2019_files/figure-html/unnamed-chunk-5-1.png") 
+```
+Fonte: [Explorando o orçamento da Prefeitura Municipal de São Paulo](https://beatrizmilz.github.io/DadosExecucaoOrcamentariaPMSP/proposta2019.html)
+
+
+---
+
+**Exemplo: Gráfico elaborado com R - Execução Orçamentária PMSP na função Gestão Ambiental** 
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("https://beatrizmilz.github.io/DadosExecucaoOrcamentariaPMSP/gestaoambiental_files/figure-html/unnamed-chunk-5-1.png") 
+```
+Fonte: [Explorando o orçamento da Prefeitura Municipal de São Paulo](https://beatrizmilz.github.io/DadosExecucaoOrcamentariaPMSP/gestaoambiental.html)
+
+
+---
+
+**Exemplo: Gráfico elaborado com R - Material Particulado 10 - Dados CETESB - RPollution;** 
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("https://www.rpollution.com/blog/pm-em-sp_files/figure-html/unnamed-chunk-6-1.png") 
+```
+Fonte: [Rpollution](https://www.rpollution.com/)
+
+---
+
+**Exemplo: Frequência de Palavras - TESE Doutorado PROCAM/USP Ana Lucia Spinola;** 
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/ana-lu-freq.png") 
+```
+Fonte: [Ana Lu Spinola](https://analuspi.github.io/Text-Mining/)
+---
+
+**Exemplo: BIGRAM - TESE Doutorado PROCAM/USP Ana Lucia Spinola;** 
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/bigram-ana-lu.png") 
+```
+Fonte: [Ana Lu Spinola](https://analuspi.github.io/Text-Mining/)
+
+---
+
+# Antes de começar, criar um projeto
+
+> Ao realizar um projeto, sempre organizar os arquivos em uma **pasta** que conterá todos os arquivos de seu projeto. 
+
+> Nomear novos arquivos com **nomes descritivos**
+
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/organização_arquivos.png") 
+```
+
+---
+# Boas práticas para organizar seu projeto
+
+> **Tratar dados como somente leitura: **esse é provavelmente o objetivo mais importante da configuração de um projeto. Os dados geralmente consomem tempo e/ou são caros para coletar. Trabalhar com eles interativamente (por exemplo, no Excel), onde eles podem ser modificados, significa que você nunca tem certeza de onde os dados vieram, ou como eles foram modificados desde a coleta. Portanto, é uma boa ideia tratar seus dados como “somente leitura”.
+
+> **Qualquer coisa gerada pelos seus scripts deve ser tratada como descartável: **todos devem poder ser criados novamente a partir dos seus scripts. Existem várias maneiras diferentes de gerenciar essa saída. Acho útil ter uma pasta de saída com subdiretórios diferentes para cada análise separada. Isso fica mais fácil depois, já que muitas das análises são exploratórias e não acabam sendo usadas no projeto final, e algumas análises são compartilhadas entre os projetos.
+
+Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/index.html)
+---
+
+# Criando um projeto
+```{r}
+# acho que esse criando m projeto poderia ser lá embaixo quando dar os desafios. O primeiro desafio seria criar um projeto (o que vcs acham?)
+```
+
+1. Clique na opção **“File”** do menu, e então em **“New Project”**.
+
+1.  Clique em **“New Directory”**.
+
+1.  Clique em **“New Project”**.
+
+1.  Escreva o nome do diretório (pasta) onde deseja manter seu projeto, ex “my_project”.
+
+1.  Clique no botão **“Create Project”**.
+
+
+OBS: Crie um novo script para escrever seus códigos!
+  **File -> New File -> RScript **
+
+---
+
+# Projetos
+
+> "Um bom layout de projeto facilitará sua vida: ajudará a garantir a integridade de seus dados; facilita o compartilhamento de seu código com outra pessoa (colega de laboratório, colaborador ou orientador); ele permite que você facilmente faça o upload do seu código com a submissão do seu manuscrito; torna-se mais fácil recuperar o projeto depois de um intervalo. "
+
+Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/index.html)
+
+---
+
+class: center, middle
+# Introdução ao RStudio
+
+---
+
+# RStudio
+
+**RStudio** é o IDE (integrated development environment) da Linguagem R, ou seja, o ambiente que utilizamos para editar e executar os códigos em R. Tem quatro áreas, conforme a figura abaixo:
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/RStudio_screen.png")
+```
+
+---
+
+# RStudio
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/01-rstudio.png")
+```
+Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/index.html)
+---
+# RStudio
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/01-rstudio-script.png")
+```
+Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/index.html)
+
+
+---
+# RStudio
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/haydee1.jpg")
+```
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+# RStudio
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/haydee2.jpg")
+```
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+# RStudio
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/haydee3.jpg")
+```
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+# RStudio
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/haydee4.jpg")
+```
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+# RStudio
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/haydee5.jpg")
+```
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+# RStudio
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/haydee6.jpg")
+```
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+# RStudio
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/haydee7.jpg")
+```
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+# RStudio
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/haydee8.jpg")
+```
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+
+---
+
+# Help!
+
+- Pedir ajuda: **help**(nome_da_funcao) ou **?**nome_da_funcao.
+
+```{r, eval=FALSE}
+help(sum)
+?sum
+```
+
+- Se a dúvida permanecer, procure no [Stack OverFlow](https://stackoverflow.com/) ou Google.
+- E se ainda tiver dúvidas, pergunte para a comunidade (há grupos no Telegram e outras redes sociais).
+---
+
+# Atalhos importantes
+
+Os atalhos facilitam. Veja os principais:<br></br>
+
+- CTRL + ENTER: roda a linha selecionada no script.<br></br>
+- ALT + **-**: (<-) sinal de atribuição.<br></br>
+- CTRL + SHIFT + M: (%>%) operador pipe.<br></br>
+---
+
+# E lá vamos nós!
+
+<center><img src="img/S5e27_T.V._typing.gif"></center> 
+
+---
+class: center, middle
+# R Básico
+
+---
+# Instruções
+
+- Abrir o RStudio da sua máquina <br></br>
+
+- Abrir um novo R script (file -> new file -> R script)
+---
+# R como calculadora
+
+- O R permite realizar muitas operações aritméticas em seu console!
+
+```{r}
+2 + 5    # adição
+9 - 4    # subtração
+5 * 2    # multiplicação
+7 / 5    # divisão
+```
+
+---
+
+# R como calculadora
+
+```{r}
+9 %% 4   # resto da divisão de 9 por 4
+7 %/% 4  # parte inteira da divisão de 4 por 3
+8 ^ 2    # potenciação
+sqrt(1024) # radiciação
+
+```
+
+A ordem matemática das operações também vale no R.
+---
+# Funções matemáticas
+
+```{r}
+sin(1)  # trigonometry functions
+
+log(1)  # natural logarithm
+
+log10(10) # base-10 logarithm
+
+exp(0.5) # e^(1/2)
+
+```
+
+Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/index.html)
+
+---
+# Desafio 1
+
+Daenerys quer conquistar uma aldeia com os seus dois dragões. Cada dragão mata 32 ovelhas e 90 pessoas a cada 1 hora. Considerando que ela atacará a aldeia por 4h, quantas ovelhas e pessoas ao todo os dragões irão assassinar após o ataque?
+
+---
+
+# Desafio 1 - Resposta
+
+Daenerys quer conquistar uma aldeia com os seus dois dragões. Cada dragão mata 32 ovelhas e 90 pessoas a cada 1 hora. Considerando que ela atacará a aldeia por 4h, quantas ovelhas e pessoas ao todo os dragões irão assassinar após o ataque? 
+
+```{r}
+2*32*4 + 2*90*4
+```
+
+---
+# O que é uma variável?
+- Ao se desenvolver um projeto, você irá trabalhar com diversos tipos de arquivos, além de informações que serão repetidas ao longo do script.
+
+- Para reutilizar essas informações ao longo do script utilizamos o que chamamos de **variável**
+
+- Uma variável é um espaço de memória que retém e representa um valor ou expressão
+
+```{r echo=FALSE, fig.align='center', out.width="40%"}
+knitr::include_graphics("memoria.jpeg")
+```
+---
+
+# Atribuindo valor a uma variável no R
+
+- Para atribuir um valor a um objeto no R, utilizamos o operador **<-**  <br></br>
+
+- O atalho ALT + **-** gera o operador **<-** <br></br>
+
+- Todas as declarações R onde são criados objetos atribuindo valores a eles, tem a mesma forma:  
+
+<center><b>nome_do_objeto <- valor<b></center>
+
+---
+
+# Exemplos de objetos e atribuição de valores
+
+```{r}
+nome_empregado <- "Tom Cruise de Souza e Silva"
+nome_empregado
+horas_trabalhadas <- 160
+horas_trabalhadas
+salario <- 3984.23
+salario
+ativo <- TRUE
+ativo
+```
+
+---
+# Nomes de objetos e variáveis
+- Os nomes devem começar com uma letra. Podem conter letras, números, _ e .<br></br>
+
+- Recomendação do autor do livro R For Data Science: **usar_snake_case**, ou seja, palavras escritas em minúsculo separadas pelo underscore (_).<br></br>
+
+- O R é *case sensitive*, isto é, faz a diferenciação entre as letras minúsculas e maiúsculas. Portanto, um objeto chamado *teste* é diferente de um outro objeto chamado *Teste*.
+
+---
+
+# Desafio 2
+1) Crie variáveis para os casos abaixo (cuidado com os nomes dados! Usaremos nos próximos desafios!): 
+- DC com valor 42
+- Marvel com valor de 23
+- Herói com valor de Superman
+- Vingadores com valor de 63
+
+---
+
+# Desafio 2 - Resposta
+
+1) 1) Crie variáveis para os casos abaixo (cuidado com os nomes dados! Usaremos nos próximos desafios!): 
+
+```{r}
+dc <- 42
+dc
+marvel <- 23
+marvel
+heroi <- "Superman"
+heroi
+vingadores <- 63
+vingadores
+```
+
+---
+# Classes Básicas ou Atômicas do R
+- **Character**: texto <br></br>
+- **Integer**: números inteiros <br></br>
+- **Numeric**: números racionais <br></br>
+- **Complex**: números complexos (raramente usados para Análise de Dados) <br></br>
+- **Logical**: TRUE, FALSE ou NA <br></br>
+- **Factor**: variavéis categóricas
+
+---
+
+# Exemplos: character
+
+```{r}
+"escola"
+"2019"
+"I love pinschers."
+```
+
+---
+
+# Exemplos: integer
+
+```{r}
+10L #Um número inteiro pode ser representado acompanhado de um L
+2019L
+```
+
+---
+
+# Exemplos: numeric
+
+```{r}
+10
+2019
+5.44
+```
+
+---
+# Exemplos: complex
+```{r}
+4 + 9i
+```
+
+---
+
+# Exemplos: logical
+```{r}
+TRUE
+FALSE
+```
+
+---
+
+# Exemplos: factor
+
+
+```{r}
+escolaridade <- c("Médio", "Superior", "Fundamental", "Fundamental", "Médio")
+fator <- as.factor(escolaridade)
+fator
+```
+
+
+<br></br>
+
+A função as.factor() criou um objeto do tipo factor.
+
+Na linha *Levels* aparecem os rótulos do fator.
+
+Essa classe de dados pode ser trabalhada com o pacote **forcats**.
+
+---
+
+# Função class: 
+
+A função **class** mostra a classe de um objeto.
+
+```{r}
+nome_filme <- "Bohemian Rhapsody"
+class(nome_filme)
+ano_inteiro <- 2018L
+class(ano_inteiro)
+ano <- 2018
+class(ano)
+```
+
+---
+
+# Função class
+
+```{r}
+motor <- 1.5
+class(motor)
+passou_enem <- TRUE
+class(passou_enem)
+```
+
+---
+# Operações simples com strings
+
+```{r}
+animal <- "Camaleao"
+#letras maiúsculas
+toupper(animal)
+#letras minúsculas
+tolower(animal)
+#número de caracteres
+nchar(animal)
+```
+
+---
+# Conversão de classes: 
+
+Podemos forçar um objeto a ser de uma classe específica com as funções:  
+- as.character() <br></br>
+- as.numeric() <br></br>
+- as.integer() <br></br>
+- as.logical() <br></br>
+
+---
+
+# Exemplo de conversão de classes
+
+```{r}
+vetor <- 0:9
+vetor
+class(vetor)
+
+vetor_numeric <- as.numeric(vetor)
+vetor_numeric
+class(vetor_numeric)
+```
+
+---
+
+# Exemplo de conversão de classes
+
+```{r}
+vetor_character <- as.character(vetor)
+vetor_character
+class(vetor_character)
+
+
+vetor_logical <- as.logical(vetor)
+vetor_logical
+class(vetor_logical)
+```
+
+---
+
+# Desafio 3
+
+1) Converta a variável Vingadores criada anteriormente para character. Agora cheque sua classe. O que acontece com seu valor?
+
+
+---
+
+# Desafio 3 - Resposta
+
+1) Converta a variável Vingadores criada anteriormente para character. Agora cheque sua classe. O que acontece com seu valor? 
+
+```{r}
+as.character(vingadores)
+```
+
+---
+# Tipos de variáveis:
+
+- **Vector**: armazena elementos de mesma classe. <br></br>   
+- **Matrix**: vetores de duas dimensões que armazenam elementos de mesma classe. <br></br>
+- **List**: tipo especial de vetor que aceita elementos de classes diferentes. <br></br>
+- **Data.frame**: são tabelas de dados com linhas e colunas, como uma tabela do Excel. Como são listas, essas colunas podem ser de classes diferentes.
+
+---
+
+# Exemplo: Vector
+
+A função c() cria um vetor.
+```{r}
+semestre1 <- c("janeiro", "fevereiro", "março", "abril", "maio", "junho")
+notas_alunos <- c(5, 6.5, 10, 0.5, 2.75, 3, 9)
+```
+
+É possível realizar operações com vetores.
+
+```{r}
+vetor1 <- 1:5
+vetor1 / 5   #Objeto vetor1 dividido por 5
+```
+
+```{r}
+vetor2 <- 6:10
+vetor1 * vetor2
+```
+
+---
+
+# Exemplo: Matrix
+
+A função matrix() cria uma matriz.
+```{r}
+primeira_matriz <- matrix(1:8, nrow = 2, ncol = 4)
+primeira_matriz
+```
+
+A funçăo dim() retorna a dimensăo do objeto (linha e coluna).
+```{r}
+dim(primeira_matriz)
+```
+
+---
+
+# Exemplo: List
+
+A função list() cria uma lista.
+```{r}
+wizards <- list("Harry Potter", 18, TRUE, c("Hermione Granger", "Rony Weasley"))
+class(wizards)
+```
+
+A função is.list() verifica se o objeto é ou não uma lista.
+
+```{r}
+harry_friends <- c("Hermione Granger", "Rony Weasley")
+class(harry_friends)
+is.list(harry_friends)
+```
+
+---
+
+# Exemplo: Data.frame
+
+
+A função head() mostra as primeiras 6 linhas do dataframe.
+```{r}
+data(iris)
+
+df <- iris
+
+head(df)
+```
+
+**Tibble** é uma releitura moderna do data.frame.
+
+
+---
+
+# Funções úteis para trabalhar com dataframes
+
+- tail(): mostra as últimas 6 linhas.
+
+- names(): mostra os nomes das colunas.
+
+- glimpse(): mostra várias informações sobre o Tibble, como o número de observações (linhas) e variáveis (colunas), o nome das colunas e o tipo delas.
+
+---
+
+## Operadores Relacionais
+- Igual a: **==** 
+
+Exemplos:
+```{r}
+TRUE == TRUE
+
+TRUE == FALSE
+```
+
+- Diferente de: **!=** 
+
+Exemplos:
+```{r}
+TRUE != TRUE
+
+TRUE != FALSE
+```
+---
+## Operadores Relacionais
+- Maior que: **>** <br></br>
+- Maior ou igual: **>=** <br></br>
+- Menor que: **<** <br></br>
+- Menor ou igual: **<=** <br></br>
+
+Exemplos:
+
+```{r}
+3 < 5
+
+10 >= 10
+
+10 > 10
+```
+
+
+---
+## Operadores Lógicos
+
+- E: **&** -> Será verdadeiro se os dois forem TRUE 
+
+```{r}
+x <- 5
+
+ x >= 3 & x <=7
+```
+```{r}
+y <- 2
+
+ y >= 3 & y <= 7
+```
+---
+## Operadores Lógicos
+
+- OU: **|** -> Será verdadeiro se um dos dois forem TRUE<br></br>
+
+```{r}
+y <- 2
+
+ y >= 3 | y <=7
+```
+
+```{r}
+y <- 1
+
+ y >= 3 | y == 0
+```
+---
+## Operadores Lógicos
+
+- Negação: **!** <br></br>
+
+```{r}
+(!x < 4)
+```
+
+
+---
+
+# NA
+
+Uma característica importante do R que pode dificultar a comparação são os valores ausentes ou **NAs** (não disponíveis). 
+
+**NA** representa um valor desconhecido. 
+
+---
+
+# NA
+
+Quase qualquer operação envolvendo um valor desconhecido também será desconhecido:
+
+```{r}
+NA > 10
+10 == NA
+NA + 10
+NA / 2
+```
+
+---
+
+# NA
+
+E o mais confuso:
+
+```{r}
+NA == NA
+```
+
+<br></br>
+
+**is.na()** é a função que testa se um objeto é NA.
+
+---
+
+# Índices 
+
+--- 
+
+# Desafio 5
+
+1)
+
+2)
+
+---
+
+# Desafio 5 - Resposta
+
+1) 
+
+```{r}
+
+```
+
+2) 
+
+```{r}
+
+```
+
+---
+
+# Pacotes no R
+
+**Pacotes** são coleções de funções, dados e documentação que estendem as capacidades do R básico.
+
+Eles precisam ser instalados e carregados.
+
+<center><img src="img/icon-packages.jpg" style="width: 45%"></center>
+
+---
+
+## Instalação de Pacotes:
+
+- Via CRAN: install.packages("nome-do-pacote").
+
+```{r, eval=FALSE}
+install.packages("tidyverse")
+```
+
+- Via Github: devtools::install_github("nome-do-repo/nome-do-pacote").
+
+```{r, eval=FALSE}
+devtools::install_github("tidyverse/dplyr")
+```
+
+
+## Carregar pacotes:
+
+- library(nome-do-pacote)
+
+```{r, eval=TRUE, message=FALSE}
+#library(tidyverse)
+```
+
+---
+
+# Dicas sobre Pacotes
+
+1. Você só precisa instalar o pacote uma vez, mas precisa carregá-lo sempre que começar uma nova sessão;
+
+2. Para instalar o pacote use as aspas;  
+
+3. Para carregar o pacote, **não** utilize as aspas.
+---
+
+# Pacotes - CRAN Task View
+
+- [CRAN Task View](https://cran.r-project.org/web/views/)
+
+- [CRAN Task View: Analysis of Ecological and Environmental Data](https://cran.r-project.org/web/views/Environmetrics.html) - Ex: Hydrology and Oceanography, Climatology, etc.
+
+- [CRAN Task View: Analysis of Spatial Data](https://cran.r-project.org/web/views/Spatial.html) - Ex: Ecological analysis, Geostatistics, etc.
+---
+
+# Para aprender mais
+
+- [Livro R for Data Science](https://r4ds.had.co.nz) <br></br>
+- [Material do Curso-R](https://www.curso-r.com/material/) <br></br>
+- [R-Bloggers](https://www.r-bloggers.com) <br></br>
+
+---
+
+# Referências
+
+- https://r4ds.had.co.nz
+
+- https://www.curso-r.com/material/
+
+- https://www.tidyverse.org
+
+- http://brunaw.com/slides/rladies-sp/13-08-2018/meetup.html#1
+
+- https://github.com/MaryMS/2018-11-R-Course-FatecZS
+
+- https://beatrizmilz.github.io/talk/oficina_intro_r_ufabc_2018/
+
+- https://bookdown.org/wevsena/curso_r_tce/curso_r_tce.html
+
+- https://rstudio-pubs-static.s3.amazonaws.com/279878_c7634fb5fe9e40b7abc7c35aa724a2a0.html
+
+- https://analisereal.com/tag/introducao-a-analise-de-dados-com-o-r-2/
+
+- http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html
+
+A apresentação foi feita em [xaringan](https://github.com/yihui/xaringan), um pacote do R! :)
+
+---
+
+class: middle
+<center><img src="img/if_you_want_to_go_fast_go_alone.jpg" style="width: 50%"></center>
+
+---
+
+class: middle, inverse
+
+# Muito obrigada!
+
+R-Ladies São Paulo
